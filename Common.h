@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string.h>
 #include <memory>
 #include <string>
 
@@ -18,7 +18,65 @@ public:
 
 using ExpressionPtr = std::unique_ptr<Expression>;
 
+class ClassValue:: public Expression{
+int value;
+public:
+    ClassValue(int value){
+    this->value;
+    }
+    int Evaluate() const override{
+    return value;
+    }
+    string ToString() const override{
+        return('('+ to_string(value)+')');
+    }
+};
+
+
+class ClassOperation::public Expression{
+ExpressionPtr left;
+ExpressionPtr right;
+
+};
+
+class ClassSum::public Operation{
+
+public:
+    int Valuate() const override{
+    return (left.Evaluate()+right.Evaluate());
+    }
+    string ToString() const override{
+        return('('+ (left->ToSrting())+'+'+(right->ToString())+')');
+    }
+
+};
+
+class ClassProduct::public Operation{
+
+public:
+    int Valuate() const override{
+    return (left.Evaluate()*right.Evaluate());
+    }
+    string ToString() const override{
+        return('('+ (left->ToSrting())+'*'+(right->ToString())+')');
+    }
+
+};
+
 // Функции для формирования выражения
-ExpressionPtr Value(int value);
-ExpressionPtr Sum(ExpressionPtr left, ExpressionPtr right);
-ExpressionPtr Product(ExpressionPtr left, ExpressionPtr right);
+
+ExpressionPtr Value(int value){
+ExpressionPtr ptr = make_unique(new ClassValue(value));
+return ptr;
+};
+
+
+ExpressionPtr Sum(ExpressionPtr left, ExpressionPtr right){
+ExpressionPtr ptr = make_unique(new ClassOperation);
+return ptr;
+};
+
+ExpressionPtr Product(ExpressionPtr left, ExpressionPtr right){
+ExpressionPtr ptr = make_unique(new ClassOPeration);
+return ptr;
+};
