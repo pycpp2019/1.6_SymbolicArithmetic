@@ -22,11 +22,11 @@ std::unique_ptr<ClassProduct> ptr (new ClassProduct(move(left), move(right)));
 return ptr;
 };*/
 
-
+/*
 int main(){
 
 ExpressionPtr ptr = Product(Sum(Value(9),Value(9)),Product(Value(5),Sum(Value(0),Value(5))));
 cout<<ptr->Evaluate()<< endl;
 cout<<ptr->ToString()<< endl;
 return 0;
-}
+}*/
