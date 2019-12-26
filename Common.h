@@ -20,5 +20,5 @@ using ExpressionPtr = std::unique_ptr<Expression>;
 
 // Функции для формирования выражения
 ExpressionPtr Value(int value);
-ExpressionPtr Sum(ExpressionPtr left, ExpressionPtr right);
-ExpressionPtr Product(ExpressionPtr left, ExpressionPtr right);
+ExpressionPtr Sum(ExpressionPtr e1, ExpressionPtr e2);
+ExpressionPtr Product(ExpressionPtr e1, ExpressionPtr e2);
