@@ -1,6 +1,6 @@
 SRCS := $(wildcard *.cpp)
 OBJS := $(patsubst %.cpp,out/%.o,$(SRCS))
-FLAGS=-std=c++11 -I.
+FLAGS=-std=c++14 -I.
 
 
 
